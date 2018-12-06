@@ -1,14 +1,15 @@
 import React from "react";
-import { Platform, StatusBar, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { AppLoading, Asset, Font, Icon } from "expo";
 import AppNavigator from "./navigation/AppNavigator";
-import Hello from "./components/Hello";
+//import Hello from "./components/Hello";
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <TextInput placeholder={"email"} style={styles.input} />
+        <Button title={"Sweep Now"} stretchy={false} onPress={() => console.log("Doing a sweep...")} />
       </View>
     );
   }
