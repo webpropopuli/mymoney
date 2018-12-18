@@ -8,9 +8,9 @@ Controlled input:
 Each component has it's own state so, constructore --> state
 Then onChangeText()
 
-````<TextInput
+```<TextInput
         value={this.state.inputVal}
         style={styles.input}
         onChangeText={txt => this.setState({ inputVal: txt })}
-      />```
-````
+      />
+```

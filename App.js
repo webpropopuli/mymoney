@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import styles from "./styles";
 
 //import AppNavigator from "./navigation/AppNavigator";
 
@@ -11,6 +12,10 @@ export default class App extends React.Component {
       dispVal: ""
     };
   }
+
+  sweep = () => {
+    console.log("Doing a sweep...");
+  };
 
   updText = txt => {
     this.setState({ dispVal: `Current email: ${txt}` });
@@ -28,34 +33,18 @@ export default class App extends React.Component {
           onChangeText={this.updText}
         />
         <Text style={styles.myText}>{this.state.dispVal}</Text>
-        <Button title={"Sweep Now"} stretchy={false} onPress={() => console.log("Doing a sweep...")} />
+
+        <View style={styles.myButtons}>
+          <Button title={"Sweep Now"} stretchy={false} onPress={() => this.sweep()} />
+          <Button
+            title={"other thing"}
+            stretchy={false}
+            onPress={() => {
+              console.log("some other thing...");
+            }}
+          />
+        </View>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#111",
-    padding: 10
-  },
-  input: {
-    height: 50,
-    width: "100%",
-    fontSize: 26,
-    color: "#333",
-    borderColor: "#eee",
-    backgroundColor: "#ddd",
-    borderBottomWidth: 1
-  },
-  myText: {
-    height: 20,
-    fontSize: 12,
-    color: "#fff",
-    backgroundColor: "#222"
-  }
-});
